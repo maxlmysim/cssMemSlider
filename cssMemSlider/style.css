@@ -33,32 +33,27 @@ input {
     flex-shrink: 0;
     background-size: cover;
     border-radius: 10px;
+    background-repeat: no-repeat;
 }
 
 .slide1 {
     background-image: url(./assets/1.jpg);
-    background-repeat: no-repeat;
-    z-index: 2;
 }
 
 .slide2 {
     background-image: url(./assets/2.jpg);
-    background-repeat: no-repeat;
 }
 
 .slide3 {
     background-image: url(./assets/3.jpg);
-    background-repeat: no-repeat;
 }
 
 .slide4 {
     background-image: url(./assets/4.jpg);
-    background-repeat: no-repeat;
 }
 
 .slide5 {
     background-image: url(./assets/5.jpg);
-    background-repeat: no-repeat;
 }
 
 #slide1:checked ~ .slider-bottom .label1 .area-label,
@@ -151,4 +146,50 @@ input {
 
 .label:active .area-label {
     border: solid 3px #bdbebf;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 320px;
+        height: 100vh;
+    }
+
+    .slides {
+        width: 320px;
+        height: 180px;
+    }
+
+    #slide2:checked ~ .slider,
+    #slide2:checked ~ .slider-bottom .slider-bottom__text  {
+        margin-left: -320px;
+    }
+
+    #slide3:checked ~ .slider,
+    #slide3:checked ~ .slider-bottom .slider-bottom__text {
+        margin-left: -640px;
+    }
+
+    #slide4:checked ~ .slider,
+    #slide4:checked ~ .slider-bottom .slider-bottom__text  {
+        margin-left: -960px;
+    }
+
+    #slide5:checked ~ .slider,
+    #slide5:checked ~ .slider-bottom .slider-bottom__text {
+        margin-left: -1280px;
+    }
+
+    .slider-bottom {
+        width: 320px;
+        flex-direction: column-reverse;
+    }
+
+    .slider__text {
+        width: 320px;
+        font-size: 15px;
+    }
 }
