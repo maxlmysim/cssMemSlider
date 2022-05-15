@@ -1,0 +1,154 @@
+body {
+    background-color: #25282a;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 768px;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #25282a;
+    overflow: hidden;
+}
+
+input {
+    display: none;
+}
+
+.slider,
+.slider-bottom__text {
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    transition: all 1s ease-in-out;
+}
+
+.slides {
+    display: inline-block;
+    width: 768px;
+    height: 432px;
+    flex-shrink: 0;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.slide1 {
+    background-image: url(./assets/1.jpg);
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.slide2 {
+    background-image: url(./assets/2.jpg);
+    background-repeat: no-repeat;
+}
+
+.slide3 {
+    background-image: url(./assets/3.jpg);
+    background-repeat: no-repeat;
+}
+
+.slide4 {
+    background-image: url(./assets/4.jpg);
+    background-repeat: no-repeat;
+}
+
+.slide5 {
+    background-image: url(./assets/5.jpg);
+    background-repeat: no-repeat;
+}
+
+#slide1:checked ~ .slider-bottom .label1 .area-label,
+#slide2:checked ~ .slider-bottom .label2 .area-label,
+#slide3:checked ~ .slider-bottom .label3 .area-label,
+#slide4:checked ~ .slider-bottom .label4 .area-label,
+#slide5:checked ~ .slider-bottom .label5 .area-label {
+    background-color: #71abff;
+}
+
+#slide1:checked ~ .slider-bottom .label1:hover .area-label,
+#slide2:checked ~ .slider-bottom .label2:hover .area-label,
+#slide3:checked ~ .slider-bottom .label3:hover .area-label,
+#slide4:checked ~ .slider-bottom .label4:hover .area-label,
+#slide5:checked ~ .slider-bottom .label5:hover .area-label {
+    background-color: white;
+}
+
+#slide1:checked ~ .slider-bottom .label1:active .area-label,
+#slide2:checked ~ .slider-bottom .label2:active .area-label,
+#slide3:checked ~ .slider-bottom .label3:active .area-label,
+#slide4:checked ~ .slider-bottom .label4:active .area-label,
+#slide5:checked ~ .slider-bottom .label5:active .area-label {
+    background-color: #bdbebf;
+}
+
+#slide1:checked ~ .slider,
+#slide1:checked ~ .slider-bottom .slider-bottom__text {
+    margin-left: 0;
+}
+
+#slide2:checked ~ .slider,
+#slide2:checked ~ .slider-bottom .slider-bottom__text  {
+    margin-left: -768px;
+}
+
+#slide3:checked ~ .slider,
+#slide3:checked ~ .slider-bottom .slider-bottom__text {
+    margin-left: -1536px;
+}
+
+#slide4:checked ~ .slider,
+#slide4:checked ~ .slider-bottom .slider-bottom__text  {
+    margin-left: -2304px;
+}
+
+#slide5:checked ~ .slider,
+#slide5:checked ~ .slider-bottom .slider-bottom__text {
+    margin-left: -3072px;
+}
+
+.slider-bottom {
+    width: 768px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.slider__text {
+    width: 768px;
+    flex-shrink: 0;
+    color: white;
+    font-size: 25px;
+}
+
+.label-container {
+    display: flex;
+}
+
+.label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+}
+
+.area-label {
+    border: solid 3px #71abff;
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+}
+
+.label:hover .area-label {
+    border: solid 3px white;
+}
+
+.label:active .area-label {
+    border: solid 3px #bdbebf;
+}
